@@ -2,9 +2,11 @@
 
 #include "philo.h"
 
-void	print_msg(void *arg)
+void	*print_msg(void *arg)
 {
-
+	printf("hola");
+	while (1)
+		sleep(1);
 }
 
 
@@ -21,6 +23,9 @@ t_ph	*init_struct(char **argv)
 	philo->time_to_eat = ft_atoi(argv[3]);
 	philo->time_to_sleep = ft_atoi(argv[4]);
 	philo->num_of_eats = ft_atoi(argv[5]);
+	if (philo->num_of_philo < 2 || philo->time_to_die <= 0 || philo->time_to_eat <= 0
+			|| philo->time_to_sleep <= 0)
+		exit (0);
 	return (philo);
 }
 
@@ -34,14 +39,14 @@ int	main(int argc, char **argv)
 	pthread_t	h2;
 	t_ph		*philo;
 
-	if (argc != 5)
+	if (argc != 6)
 	{
 		write(1, "Incorrect num of arguments", 26);
 		return (0);
 	}
 	philo = init_struct(argv);
-	pd = fork();
+	//pd = fork();
 	pthread_create(&h1, NULL, print_msg, NULL);
 	while (1)
-		i++;
+		sleep(1);
 }
