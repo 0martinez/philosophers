@@ -31,6 +31,7 @@ t_ph	*init_struct(char **argv)
 
 #include "philo.h"
 
+
 void	*print_msg(void *arg)
 {
 	sleep(1);
