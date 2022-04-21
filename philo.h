@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/21 12:52:29 by omartine          #+#    #+#             */
+/*   Updated: 2022/04/21 12:52:38 by omartine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-# ifndef PHILO_H
+#ifndef PHILO_H
 # define PHILO_H
 
 # include <stdio.h>
@@ -12,7 +22,6 @@
 # include <sys/wait.h>
 # include <pthread.h>
 
-
 typedef struct s_ph
 {
 	int	num_of_philo;
@@ -20,10 +29,9 @@ typedef struct s_ph
 	int	time_to_eat;
 	int	time_to_sleep;
 	int	num_of_eats;
-	
-}	t_ph;
 
+}	t_ph;
 
 int	ft_atoi(const char *str);
 
-# endif
+#endif

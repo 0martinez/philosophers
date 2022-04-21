@@ -1,7 +1,20 @@
-NAME			= philosophers
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: omartine <omartine@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/21 12:52:22 by omartine          #+#    #+#              #
+#    Updated: 2022/04/21 12:58:53 by omartine         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
+NAME			= philo
 CC				= gcc
 RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror
+#CFLAGS			= -Wall -Wextra -Werror
 MAKE			= make
 
 
@@ -12,7 +25,7 @@ OBJS = $(SRCS:.c=.o)
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -lpthread
+				$(CC) $(OBJS) -o $(NAME) -lpthread
 
 clean:
 				$(RM) $(OBJS) $(BONUS_O)

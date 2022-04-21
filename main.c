@@ -1,16 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/21 12:52:51 by omartine          #+#    #+#             */
+/*   Updated: 2022/04/21 12:58:32 by omartine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-#include "philo.h"
-
-void	*print_msg(void *arg)
-{
-	printf("hola");
-	while (1)
-		sleep(1);
-}
-
-
-
+/*
 t_ph	*init_struct(char **argv)
 {
 	t_ph	*philo;
@@ -27,26 +27,35 @@ t_ph	*init_struct(char **argv)
 			|| philo->time_to_sleep <= 0)
 		exit (0);
 	return (philo);
+}*/
+
+#include "philo.h"
+
+void	*print_msg(void *arg)
+{
+	sleep(1);
+	printf("in the thread\n");
+	return (0);
 }
 
-
-int	main(int argc, char **argv)
+int	main(void)
 {
-	
-	
-	pid_t	pd;
-	pthread_t	h1;
-	pthread_t	h2;
-	t_ph		*philo;
+	//pid_t	pd;
+	//pthread_t	h1;
+	//pthread_t	h2;
+	//t_ph		*philo;
 
-	if (argc != 6)
-	{
-		write(1, "Incorrect num of arguments", 26);
-		return (0);
-	}
-	philo = init_struct(argv);
-	//pd = fork();
-	pthread_create(&h1, NULL, print_msg, NULL);
-	while (1)
-		sleep(1);
+	//if (argc != 6)
+	//{
+	//	write(1, "Incorrect num of arguments", 26);
+	//	return (0);
+	//}
+	//philo = init_struct(argv);
+	pthread_t	thread_id;
+
+	printf("Before Thread\n");
+	pthread_create(&thread_id, NULL, print_msg, NULL);
+	pthread_join(thread_id, NULL);
+	printf("After Thread\n");
+	exit(0);
 }
