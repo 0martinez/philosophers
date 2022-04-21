@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 12:52:29 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/21 12:52:38 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/21 13:50:28 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 # include <sys/wait.h>
 # include <pthread.h>
 
+# define TRUE 1
+# define FALSE 0
+
 typedef struct s_ph
 {
 	int	num_of_philo;
@@ -31,6 +34,16 @@ typedef struct s_ph
 	int	num_of_eats;
 
 }	t_ph;
+
+typedef struct s_philo
+{
+	int				id;
+	pthread_mutex_t	right_fork;
+	pthread_mutex_t	left_fork;
+	t_philo			*next_philo;
+	t_philo			*last_philo;
+}	t_philo;
+
 
 int	ft_atoi(const char *str);
 
