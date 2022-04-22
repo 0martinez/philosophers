@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 12:52:29 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/21 13:50:28 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/22 18:21:24 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <signal.h>
 # include <sys/types.h>
 # include <sys/wait.h>
+# include <sys/time.h>
 # include <pthread.h>
 # include "philo_struct.h"
 
