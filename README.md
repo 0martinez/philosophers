@@ -1,6 +1,8 @@
 ACTUAL STATE OF THE PROJECT:
 
 -act of the struct philo and philo terms
+
+
 -add a philo init
 -added a file called "philo_dance", where im going to start all
  the philo proces(dance)
