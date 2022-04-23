@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 12:52:29 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/22 18:21:24 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/23 19:48:46 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define TRUE 1
 # define FALSE 0
 
-int	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
+void	philo_dance(t_terms *philo_terms, t_philo *philo);
 
 #endif
