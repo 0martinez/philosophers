@@ -6,7 +6,7 @@
 #    By: omartine <omartine@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 12:52:22 by omartine          #+#    #+#              #
-#    Updated: 2022/04/21 12:58:53 by omartine         ###   ########.fr        #
+#    Updated: 2022/04/26 13:24:35 by omartine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@
 NAME			= philo
 CC				= gcc
 RM				= rm -rf
-#CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror
 MAKE			= make
 
 
-SRCS = main.c utils/ft_atoi.c
+SRCS = main.c utils/ft_atoi.c philo_dance/philo_dance.c philo_dance/philo_moves.c
 
 OBJS = $(SRCS:.c=.o)
 

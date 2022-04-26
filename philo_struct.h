@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:32:57 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/23 20:25:13 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/26 13:31:26 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define SLEEPING 1
 # define THINKING 2
 # define DISABLED 0
+# define DEAD 3
 
 typedef struct s_terms
 {

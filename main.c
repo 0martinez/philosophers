@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:22:11 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/23 20:34:50 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/26 13:25:25 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ t_philo	*init_philo(t_terms *philo_terms)
 			philos[i].left_fork = philos[i - 1].righ_fork;
 			philos[i].l_fork_position = i - 1;
 		}
-
 		i++;
 	}
 	return (philos);
@@ -75,11 +74,10 @@ int	main(int argc, char **argv)
 {
 	t_terms	*philo_terms;
 	t_philo	*philos;
-	int		i;
 
 	philo_terms = init_terms(argv, argc);
 	philos = init_philo(philo_terms);
-	philo_dance(philo_terms, philos);
+	philo_dance(philos);
 	return (0);
 }
 
