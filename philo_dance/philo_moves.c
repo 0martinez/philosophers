@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 20:09:23 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/26 13:51:21 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:04:30 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,6 @@ int	evaluate(struct timeval start, struct timeval finish, double time_to_die)
 		+ ((finish.tv_usec - start.tv_usec) / 1000) >= time_to_die)
 		return (1);
 	return (0);
-}
-
-int	philo_sleep(t_philo philo)
-{
-	struct timeval	start_sleep;
-	struct timeval	wakeup;
-
-	gettimeofday(&start_sleep, NULL);
-	gettimeofday(&wakeup, NULL);
-	while (((wakeup.tv_sec - start_sleep.tv_sec) * 1000)
-		+ ((wakeup.tv_usec - start_sleep.tv_usec) / 1000)
-		< philo.philo_terms.time_to_sleep)
-	{
-		gettimeofday(&wakeup, NULL);
-		if (evaluate(start_sleep, wakeup, philo.philo_terms.time_to_die) == 1)
-			return (DEAD);
-	}
-	return (THINKING);
 }
 
 void	philo_eat(t_philo philo)
@@ -51,4 +33,42 @@ void	philo_eat(t_philo philo)
 	{
 		gettimeofday(&finish_eating, NULL);
 	}
+}
+
+int	philo_sleep(t_philo philo, struct timeval *timer)
+{
+	struct timeval	start_sleep;
+	struct timeval	wakeup;
+
+	gettimeofday(&start_sleep, NULL);
+	gettimeofday(&wakeup, NULL);
+	while (((wakeup.tv_sec - start_sleep.tv_sec) * 1000)
+		+ ((wakeup.tv_usec - start_sleep.tv_usec) / 1000)
+		< philo.philo_terms.time_to_sleep)
+	{
+		gettimeofday(&wakeup, NULL);
+		if (evaluate(start_sleep, wakeup, philo.philo_terms.time_to_die) == 1)
+			return (DEAD);
+	}
+	*timer = wakeup;
+	return (THINKING);
+}
+
+int	philo_think(t_philo philo, struct timeval *timer)
+{
+	struct timeval	start_think;
+	struct timeval	hungry;
+
+	gettimeofday(&start_think, NULL);
+	gettimeofday(&hungry, NULL);
+	while (((hungry.tv_sec - start_think.tv_sec) * 1000)
+		+ ((hungry.tv_usec - start_think.tv_usec) / 1000)
+		< philo.philo_terms.time)
+	{
+		gettimeofday(&wakeup, NULL);
+		if (evaluate(start_sleep, wakeup, philo.philo_terms.time_to_die) == 1)
+			return (DEAD);
+	}
+	*timer = wakeup;
+	return (THINKING);
 }
