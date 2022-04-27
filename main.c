@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:22:11 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/27 15:24:47 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/27 19:05:53 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,15 @@ t_philo	*init_philo(t_terms *philo_terms)
 		philos[i].philo_terms = *philo_terms;
 		philos[i].id = i;
 		philos[i].r_fork_position = i;
-		philos[i].
+		pthread_mutex_init(&philos[i].right_fork, NULL);
 		if (i == 0)
 		{
-			philos[i].left_fork = philos[philo_terms->num_of_philo - 1].righ_fork;
+			philos[i].left_fork = philos[philo_terms->num_of_philo - 1].right_fork;
 			philos[i].l_fork_position = philo_terms->num_of_philo - 1;
 		}
 		else
 		{
-			philos[i].left_fork = philos[i - 1].righ_fork;
+			philos[i].left_fork = philos[i - 1].right_fork;
 			philos[i].l_fork_position = i - 1;
 		}
 		i++;

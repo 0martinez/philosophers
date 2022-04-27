@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:32:57 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/27 13:27:47 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/27 18:16:03 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 # define DEAD 3
 # define RIGHT_FORK 5
 # define LEFT_FORK 6
+# define RIGHT_FORK_LEFT 7
+# define LEFT_FORK_LEFT 8
 
 typedef struct s_terms
 {
@@ -41,9 +43,11 @@ typedef struct s_philo
 	int				state_of_philo;
 	int				r_fork_position;
 	int				l_fork_position;
+	struct timeval	timer1;
+	struct timeval	timer2;
 	pthread_t		philo_thread;
 	pthread_mutex_t	left_fork;
-	pthread_mutex_t	righ_fork;
+	pthread_mutex_t	right_fork;
 	struct s_terms	philo_terms;
 }	t_philo;
 

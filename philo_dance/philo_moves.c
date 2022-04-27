@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 20:09:23 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/27 13:44:32 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/27 18:31:11 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	philo_sleep(t_philo philo, struct timeval *timer)
 		< philo.philo_terms.time_to_sleep)
 	{
 		gettimeofday(&wakeup, NULL);
-		if (evaluate(start_sleep, wakeup, philo.philo_terms.time_to_die) == 1)
-			return (DEAD);
+		/*if (evaluate(start_sleep, wakeup, philo.philo_terms.time_to_die) == 1)
+			return (DEAD);*/
 	}
 	*timer = wakeup;
 	return (THINKING);
