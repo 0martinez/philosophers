@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 20:09:23 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/26 16:04:30 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/27 13:44:32 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	philo_sleep(t_philo philo, struct timeval *timer)
 	return (THINKING);
 }
 
+/*
 int	philo_think(t_philo philo, struct timeval *timer)
 {
 	struct timeval	start_think;
@@ -71,4 +72,4 @@ int	philo_think(t_philo philo, struct timeval *timer)
 	}
 	*timer = wakeup;
 	return (THINKING);
-}
+}*/

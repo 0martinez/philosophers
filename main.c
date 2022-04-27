@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:22:11 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/26 13:25:25 by omartine         ###   ########.fr       */
+/*   Updated: 2022/04/27 15:24:47 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_philo	*init_philo(t_terms *philo_terms)
 		philos[i].philo_terms = *philo_terms;
 		philos[i].id = i;
 		philos[i].r_fork_position = i;
+		philos[i].
 		if (i == 0)
 		{
 			philos[i].left_fork = philos[philo_terms->num_of_philo - 1].righ_fork;
