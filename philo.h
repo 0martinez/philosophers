@@ -31,7 +31,7 @@ int		ft_atoi(const char *str);
 int		ft_strlen(char *str);
 void	ft_putstr(char *str);
 
-void	philo_dance(t_philo *philo);
+void	philo_dance(t_philo *philo, t_terms *philo_terms);
 int		philo_sleep(t_philo philo, struct timeval *timer);
 void	philo_eat(t_philo philo);
 char	*ft_itoa(int n);

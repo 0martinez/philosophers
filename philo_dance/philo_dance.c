@@ -74,14 +74,14 @@ void	print_philo_state(t_philo philo, int state)
 void	*b2b_philo(void *p)
 {
 	t_philo			*philo;
-	int				philo_state;
+	//int				philo_state;
 	struct timeval	timer;
 	int	i = 0;
-	int				eats_counter;
+	//int				eats_counter;
 
 	philo = (t_philo *) p;
 	//gettimeofday(&philo[0].timer1, NULL);
-	eats_counter = 0;
+	//eats_counter = 0;
 	write(1, "philo ", 6);
 	write(1, ft_itoa(philo[0].id), 1);
 	write(1, "created\n", 8);
@@ -98,7 +98,7 @@ void	*b2b_philo(void *p)
 		pthread_mutex_unlock(&philo->right_fork);
 		print_philo_state(philo[0], RIGHT_FORK_LEFT);
 		print_philo_state(philo[0], SLEEPING);
-		philo_state = philo_sleep(*philo, &timer);
+		philo_sleep(*philo, &timer); //return philo_state
 		print_philo_state(philo[0], THINKING);
 		/*
 		pthread_mutex_lock(&mutex1);
@@ -112,7 +112,7 @@ void	*b2b_philo(void *p)
 		pthread_mutex_unlock(&mutex2);
 		print_philo_state(philo[0], RIGHT_FORK_LEFT);
 		print_philo_state(philo[0], SLEEPING);
-		philo_state = philo_sleep(*philo, &timer);
+		philo_sleep(*philo, &timer); //return philo_state
 		print_philo_state(philo[0], THINKING);*/
 		/*if (philo_state == DEAD)
 		{
@@ -127,7 +127,7 @@ void	*b2b_philo(void *p)
 	return (0);
 }
 
-void	philo_dance(t_philo *philo)
+void	philo_dance(t_philo *philo, t_terms *philo_terms)
 {
 	int				i;
 	struct timeval	xd;
@@ -136,11 +136,15 @@ void	philo_dance(t_philo *philo)
 	pthread_mutex_init(&mutex1, NULL);
 	pthread_mutex_init(&mutex2, NULL);
 	gettimeofday(&xd, 0);
-	while (i < 2)
+	while (i < philo_terms->num_of_philo)
 	{
 		philo[i].timer1 = xd;
 		pthread_create(&philo[i].philo_thread, NULL, b2b_philo, (void *)&philo[i]);
 		usleep(500000);
 		i++;
+	}
+	while (1)
+	{
+		sleep(1);
 	}
 }

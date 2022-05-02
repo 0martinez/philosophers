@@ -78,7 +78,7 @@ int	main(int argc, char **argv)
 
 	philo_terms = init_terms(argv, argc);
 	philos = init_philo(philo_terms);
-	philo_dance(philos);
+	philo_dance(philos, philo_terms);
 	return (0);
 }
 
