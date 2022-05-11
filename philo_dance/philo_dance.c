@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 19:04:09 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/27 19:04:00 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:31:51 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	*b2b_philo(void *p)
 {
 	t_philo			*philo;
 	//int				philo_state;
-	struct timeval	timer;
+	//struct timeval	timer;
 	int	i = 0;
 	//int				eats_counter;
 
@@ -87,7 +87,13 @@ void	*b2b_philo(void *p)
 	write(1, "created\n", 8);
 	while (i > -1)
 	{
-		pthread_mutex_lock(&philo->right_fork);
+		if (philo[0].id == 1)
+		{
+			printf("---%d---", philo[1].testing);
+			getchar();
+		}
+
+		/*pthread_mutex_lock(&philo->right_fork);
 		print_philo_state(philo[0], RIGHT_FORK);
 		pthread_mutex_lock(&philo->left_fork);
 		print_philo_state(philo[0], LEFT_FORK);
@@ -99,7 +105,7 @@ void	*b2b_philo(void *p)
 		print_philo_state(philo[0], RIGHT_FORK_LEFT);
 		print_philo_state(philo[0], SLEEPING);
 		philo_sleep(*philo, &timer); //return philo_state
-		print_philo_state(philo[0], THINKING);
+		print_philo_state(philo[0], THINKING);*/
 		/*
 		pthread_mutex_lock(&mutex1);
 		print_philo_state(philo[0], LEFT_FORK);
@@ -136,6 +142,7 @@ void	philo_dance(t_philo *philo, t_terms *philo_terms)
 	pthread_mutex_init(&mutex1, NULL);
 	pthread_mutex_init(&mutex2, NULL);
 	gettimeofday(&xd, 0);
+	philo[0].testing = 777;
 	while (i < philo_terms->num_of_philo)
 	{
 		philo[i].timer1 = xd;

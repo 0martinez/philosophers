@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:32:57 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/27 18:16:03 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:29:29 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_terms
 typedef struct s_philo
 {
 	int				id;
+	int				testing;
 	int				state_of_philo;
 	int				r_fork_position;
 	int				l_fork_position;
