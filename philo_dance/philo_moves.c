@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 20:09:23 by omartine          #+#    #+#             */
-/*   Updated: 2022/04/27 18:31:11 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/13 19:04:46 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	evaluate(struct timeval start, struct timeval finish, double time_to_die)
 	return (0);
 }
 
-void	philo_eat(t_philo philo)
+void	philo_eat(t_philo *philo)
 {
 	struct timeval	start_eating;
 	struct timeval	finish_eating;
@@ -29,7 +29,7 @@ void	philo_eat(t_philo philo)
 	gettimeofday(&finish_eating, NULL);
 	while (((finish_eating.tv_sec - start_eating.tv_sec) * 1000)
 		+ ((finish_eating.tv_usec - start_eating.tv_usec) / 1000)
-		< philo.philo_terms.time_to_eat)
+		< philo->philo_terms.time_to_eat)
 	{
 		gettimeofday(&finish_eating, NULL);
 	}
