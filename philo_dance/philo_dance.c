@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 19:04:09 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/11 16:31:51 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:15:43 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	*b2b_philo(void *p)
 {
 	t_philo			*philo;
 	//int				philo_state;
-	//struct timeval	timer;
+	struct timeval	timer;
 	int	i = 0;
 	//int				eats_counter;
 
@@ -87,32 +87,32 @@ void	*b2b_philo(void *p)
 	write(1, "created\n", 8);
 	while (i > -1)
 	{
-		if (philo[0].id == 1)
-		{
-			printf("---%d---", philo[1].testing);
-			getchar();
-		}
+		//if (philo[0].id == 1)
+		//{
+		//	printf("---%d---", philo[1].testing);
+		//	getchar();
+		//}
 
-		/*pthread_mutex_lock(&philo->right_fork);
+		pthread_mutex_lock((philo[0].right_fork));
 		print_philo_state(philo[0], RIGHT_FORK);
-		pthread_mutex_lock(&philo->left_fork);
+		pthread_mutex_lock((philo[0].left_fork));
 		print_philo_state(philo[0], LEFT_FORK);
 		print_philo_state(philo[0], EATING);
-		philo_eat(*philo);
-		pthread_mutex_unlock(&philo->left_fork);
+		philo_eat(philo);
+		pthread_mutex_unlock(&(philo[0].left_fork));
 		print_philo_state(philo[0], LEFT_FORK_LEFT);
-		pthread_mutex_unlock(&philo->right_fork);
+		pthread_mutex_unlock(&(philo[0].right_fork));
 		print_philo_state(philo[0], RIGHT_FORK_LEFT);
 		print_philo_state(philo[0], SLEEPING);
 		philo_sleep(*philo, &timer); //return philo_state
-		print_philo_state(philo[0], THINKING);*/
+		print_philo_state(philo[0], THINKING);
 		/*
 		pthread_mutex_lock(&mutex1);
 		print_philo_state(philo[0], LEFT_FORK);
 		pthread_mutex_lock(&mutex2);
 		print_philo_state(philo[0], RIGHT_FORK);
 		print_philo_state(philo[0], EATING);
-		philo_eat(*philo);
+		philo_eat(philo);
 		pthread_mutex_unlock(&mutex1);
 		print_philo_state(philo[0], LEFT_FORK_LEFT);
 		pthread_mutex_unlock(&mutex2);

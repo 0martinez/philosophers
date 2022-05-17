@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 12:52:29 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/13 19:04:11 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:30:50 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putstr(char *str);
 
 void	philo_dance(t_philo *philo, t_terms *philo_terms);
 int		philo_sleep(t_philo philo, struct timeval *timer);
-void	print_philo_state(t_philo *philo, int state);
+void	print_philo_state(t_philo philo, int state);
 void	philo_eat(t_philo *philo);
 char	*ft_itoa(int n);
 
