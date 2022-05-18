@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:35:05 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/17 19:30:56 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/18 20:02:13 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,10 @@ void	*ft_phi(void	*xd)
 	}*/
 	//pthread_mutex_lock(&mutex1);
 	//pthread_mutex_lock(&mutex2);
-	pthread_mutex_lock(philo->fork);
-	pthread_mutex_lock(philo->r_philo->fork);
-	write(1, "a", 1);
-	write(1, "im philo ", 8);
+
+	pthread_mutex_lock(&philo->fork);
+	pthread_mutex_lock(&philo->r_philo->fork);
+	write(1, "im philo ", 9);
 	write(1, ft_itoa(philo->id), 1);
 	while (1)
 	{
@@ -112,14 +112,17 @@ void	dance_philo(t_philo *philo, t_terms *philo_terms)
 	//gettimeofday(&xd, 0);
 	//pthread_mutex_init(&mutex1, NULL);
 	//pthread_mutex_init(&mutex2, NULL);
+	pthread_mutex_init(&philo->fork, NULL);
+	pthread_mutex_init(&philo->r_philo->fork, NULL);
 	while (i < philo_terms->num_of_philo)
 	{
-		philo->fork = malloc(sizeof(pthread_mutex_t));
-		pthread_mutex_init(philo->fork, NULL);
+		//philo->fork = malloc(sizeof(pthread_mutex_t));
 		pthread_create(&philo->philo_thread, NULL, ft_phi, (void *)&philo);
 		usleep(500000);
 		philo = philo->r_philo;
-		i++;
+		pthread_create(&philo->philo_thread, NULL, ft_phi, (void *)&philo);
+		//i++;
+		i = 2;
 	}
 }
 

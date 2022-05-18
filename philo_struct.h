@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:32:57 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/17 19:25:02 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:40:27 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_philo
 	struct timeval	timer1;
 	struct timeval	timer2;
 	pthread_t		philo_thread;
-	pthread_mutex_t	*fork;
+	pthread_mutex_t	fork;
 	struct s_philo	*r_philo;
 	struct s_philo	*l_philo;
 	struct s_terms	philo_terms;
