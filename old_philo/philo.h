@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 18:00:41 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/19 19:46:39 by omartine         ###   ########.fr       */
+/*   Created: 2022/04/21 12:52:29 by omartine          #+#    #+#             */
+/*   Updated: 2022/05/17 17:30:50 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,19 @@
 # include <sys/wait.h>
 # include <sys/time.h>
 # include <pthread.h>
-# include "philo_structs.h"
+# include "philo_struct.h"
+
+# define TRUE 1
+# define FALSE 0
 
 int		ft_atoi(const char *str);
-char	*ft_itoa(int n);
 int		ft_strlen(char *str);
 void	ft_putstr(char *str);
 
-t_terms	*init_terms(int argc, char **argv);
-t_philo	*init_philo(t_terms *philo_terms);
-void	philo_handler(t_philo *philo, t_terms *philo_terms);
-
-void	*socrates(void *arg);
-
-int		philo_eat(t_philo *philo);
-int		philo_sleep(t_philo *philo);
-void	print_philo_state(t_philo *philo, int state);
+void	philo_dance(t_philo *philo, t_terms *philo_terms);
+int		philo_sleep(t_philo philo, struct timeval *timer);
+void	print_philo_state(t_philo philo, int state);
+void	philo_eat(t_philo *philo);
+char	*ft_itoa(int n);
 
 #endif

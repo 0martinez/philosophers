@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 17:59:59 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/19 19:56:07 by omartine         ###   ########.fr       */
+/*   Created: 2022/04/27 13:28:13 by omartine          #+#    #+#             */
+/*   Updated: 2022/04/27 13:31:28 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
-int	main(int argc, char **argv)
+void	ft_putstr(char *str)
 {
-	t_terms	*philo_terms;
-	t_philo	*philo;
+	int	len;
 
-	philo_terms = init_terms(argc, argv);
-	philo = init_philo(philo_terms);
-	philo_handler(philo, philo_terms);
-	return (0);
+	len = ft_strlen(str);
+	write(1, str, len);
 }

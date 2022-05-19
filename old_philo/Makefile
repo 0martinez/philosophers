@@ -5,10 +5,11 @@
 #                                                     +:+ +:+         +:+      #
 #    By: omartine <omartine@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/19 19:56:54 by omartine          #+#    #+#              #
-#    Updated: 2022/05/19 19:59:26 by omartine         ###   ########.fr        #
+#    Created: 2022/04/21 12:52:22 by omartine          #+#    #+#              #
+#    Updated: 2022/04/27 19:01:59 by omartine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME			= philo
 CC				= gcc
@@ -17,9 +18,8 @@ CFLAGS			= -Wall -Wextra -Werror -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=address"
 MAKE			= make
 
 
-SRCS = main.c init_structs.c utils/ft_atoi.c utils/ft_itoa.c utils/ft_putstr.c \
-		utils/ft_strlen.c philo_dance/messages.c philo_dance/philo_handler.c \
-		philo_dance/philo_moves.c philo_dance/socrates.c
+SRCS = main.c utils/ft_atoi.c philo_dance/philo_dance.c philo_dance/philo_moves.c \
+		utils/ft_putstr.c utils/ft_strlen.c utils/ft_itoa.c
 
 OBJS = $(SRCS:.c=.o)
 

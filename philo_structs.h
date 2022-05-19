@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_struct.h                                     :+:      :+:    :+:   */
+/*   philo_structs.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 18:32:57 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/18 18:40:27 by omartine         ###   ########.fr       */
+/*   Created: 2022/05/19 18:03:54 by omartine          #+#    #+#             */
+/*   Updated: 2022/05/19 19:04:38 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_STRUCT_H
-# define PHILO_STRUCT_H
+#ifndef PHILO_STRUCTS_H
+# define PHILO_STRUCTS_H
 
 # include "philo.h"
 
 # define TRUE 1
 # define FALSE 0
 
+# define ALIVE -1
 # define EATING 0
 # define SLEEPING 1
 # define THINKING 2
@@ -40,30 +41,13 @@ typedef struct s_terms
 typedef struct s_philo
 {
 	int				id;
-	int				testing;
-	int				state_of_philo;
+	int				state;
 	struct timeval	timer1;
 	struct timeval	timer2;
 	pthread_t		philo_thread;
-	pthread_mutex_t	fork;
+	pthread_mutex_t	*fork;
 	struct s_philo	*r_philo;
-	struct s_philo	*l_philo;
-	struct s_terms	philo_terms;
+	struct s_terms	*philo_terms;
 }	t_philo;
-
-//typedef struct s_philo
-//{
-//	int				id;
-//	int				testing;
-//	int				state_of_philo;
-//	int				r_fork_position;
-//	int				l_fork_position;
-//	struct timeval	timer1;
-//	struct timeval	timer2;
-//	pthread_t		*philo_thread;
-//	pthread_mutex_t	left_fork;
-//	pthread_mutex_t	right_fork;
-//	struct s_terms	philo_terms;
-//}	t_philo;
 
 #endif
