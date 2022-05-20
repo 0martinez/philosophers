@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:05:53 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/19 19:10:16 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:42:47 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ t_philo	*init_philo(t_terms *philo_terms)
 	{
 		philo->r_philo = malloc(sizeof(t_philo));
 		init_mutex(philo);
-		philo->philo_terms = philo_terms;
+		philo->philo_terms = *philo_terms;
 		if (!philo->r_philo || !philo->fork)
 			exit(0);
 		philo->id = i;

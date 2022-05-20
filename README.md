@@ -1,11 +1,11 @@
 ACTUAL STATE OF THE PROJECT:
 
--mutex problem solved
+--everything works really nice
 
 
 
--big act of the program. ive done a circular list of philo and make an act of the struct
+--added colors to the prints of the state of the philos to identify each thing in a better way
 
 
 
--working on a new version of the philo(trying to do a clean code)
+--to do: add the num_of_eats feature, work on the leaks and norminette 

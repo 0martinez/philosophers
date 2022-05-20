@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:00:41 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/19 19:46:39 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:25:52 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 int		ft_strlen(char *str);
-void	ft_putstr(char *str);
 
 t_terms	*init_terms(int argc, char **argv);
 t_philo	*init_philo(t_terms *philo_terms);
