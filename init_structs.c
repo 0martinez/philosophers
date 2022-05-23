@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:05:53 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/20 18:42:47 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:12:16 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ t_philo	*init_philo(t_terms *philo_terms)
 
 	i = 0;
 	philo = malloc(sizeof(t_philo));
-	aux = malloc(sizeof(t_philo));
-	if (!aux || !philo)
+	if (!philo)
 		exit(0);
 	while (i < philo_terms->num_of_philo)
 	{
@@ -70,6 +69,5 @@ t_philo	*init_philo(t_terms *philo_terms)
 		philo = philo->r_philo;
 		i++;
 	}
-	free(aux);
 	return (philo);
 }

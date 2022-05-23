@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:28:18 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/20 20:30:51 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/23 13:45:18 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ void	philo_handler(t_philo *philo, t_terms *philo_terms)
 		{
 			gettimeofday(&philo->timer2, NULL);
 			printf("☠  \033[1m\033[31m%ldms Philosopher --%d-- died\033[0m ☠	", ((philo->timer2.tv_sec - philo->timer1.tv_sec) * 1000) + ((philo->timer2.tv_usec - philo->timer1.tv_usec) / 1000), philo->id + 1);
-			//printf("\033[1m\033[31m%ld philo %d died\033[0m", philo->id);
-
 			exit(0);
 		}
 		philo = philo->r_philo;

@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 19:06:32 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/20 19:07:53 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:09:30 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int	philo_eat(t_philo *philo)
 
 	gettimeofday(&start_eating, NULL);
 	gettimeofday(&finish_eating, NULL);
-	//printf("entra--time to eat--->%f", philo->philo_terms.time_to_eat);
-	//getchar();
 	while (((finish_eating.tv_sec - start_eating.tv_sec) * 1000)
 		+ ((finish_eating.tv_usec - start_eating.tv_usec) / 1000)
 		<= philo->philo_terms.time_to_eat)
@@ -44,11 +42,5 @@ int	philo_sleep(t_philo *philo)
 	{
 		gettimeofday(&finish_sleeping, NULL);
 	}
-	//if (((finish_sleeping.tv_sec - start_sleeping.tv_sec) * 1000)
-	//	+ ((finish_sleeping.tv_usec - start_sleeping.tv_usec) / 1000)
-	//	>= philo->philo_terms.time_to_die)
-	//{
-	//	return (DEAD);
-	//}
 	return (SLEEPING);
 }

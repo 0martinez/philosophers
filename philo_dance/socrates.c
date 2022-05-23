@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:36:28 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/20 19:30:19 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:09:58 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	*socrates(void *arg)
 	philo = (t_philo *)arg;
 	n_eats = 0;
 	gettimeofday(&philo->start_time, NULL);
-	//while (philo->state != DEAD || philo->philo_terms->num_of_eats != n_eats)
-	while (1)
+	while (n_eats != philo->philo_terms.num_of_eats)
 	{
 		pthread_mutex_lock(philo->fork);
 		print_philo_state(philo, LEFT_FORK);
 		pthread_mutex_lock(philo->r_philo->fork);
 		philo->state = EATING;
+		n_eats++;
 		print_philo_state(philo, RIGHT_FORK);
 		print_philo_state(philo, EATING);
 		philo->state = philo_eat(philo);
@@ -38,4 +38,5 @@ void	*socrates(void *arg)
 		philo->state = philo_sleep(philo);
 		print_philo_state(philo, THINKING);
 	}
+	return (0);
 }
