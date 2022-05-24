@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:05:53 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/23 14:12:16 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/24 18:03:09 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_terms	*init_terms(int argc, char **argv)
 {
 	t_terms	*philo;
 
-	if (argc != 6 && argc != 7)
+	if (argc != 5 && argc != 6)
 	{
 		write(1, "Incorrect num of arguments", 26);
 		exit (0);
@@ -28,7 +28,7 @@ t_terms	*init_terms(int argc, char **argv)
 	philo->time_to_die = ft_atoi(argv[2]);
 	philo->time_to_eat = ft_atoi(argv[3]);
 	philo->time_to_sleep = ft_atoi(argv[4]);
-	if (argc == 7)
+	if (argc == 6)
 		philo->num_of_eats = ft_atoi(argv[5]);
 	else
 		philo->num_of_eats = DISABLED;

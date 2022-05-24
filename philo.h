@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:00:41 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/20 19:25:52 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/24 17:18:56 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_philo	*init_philo(t_terms *philo_terms);
 void	philo_handler(t_philo *philo, t_terms *philo_terms);
 
 void	*socrates(void *arg);
+void	*platon(void *arg);
 
 int		philo_eat(t_philo *philo);
 int		philo_sleep(t_philo *philo);
