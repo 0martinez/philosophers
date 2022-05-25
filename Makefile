@@ -6,7 +6,7 @@
 #    By: omartine <omartine@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 19:56:54 by omartine          #+#    #+#              #
-#    Updated: 2022/05/24 17:24:19 by omartine         ###   ########.fr        #
+#    Updated: 2022/05/25 18:45:48 by omartine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ MAKE			= make
 
 SRCS = main.c init_structs.c utils/utils.c \
 		philo_dance/messages.c philo_dance/philo_handler.c \
-		philo_dance/philo_moves.c philo_dance/socrates_platon.c
+		philo_dance/philo_moves.c philo_dance/socrates_platon.c \
+		utils/born_to_be_free.c
 
 OBJS = $(SRCS:.c=.o)
 

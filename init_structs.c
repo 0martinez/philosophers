@@ -6,11 +6,31 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:05:53 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/24 18:03:09 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/25 19:20:37 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int	check_atoi(char *str)
+{
+	int	num;
+
+	if (!str)
+		exit(0);
+	if (str[0] == 0)
+	{
+		write(1, "empty str", 9);
+		exit(0);
+	}
+	num = ft_atoi(str);
+	if (num < 0)
+	{
+		write(1, "negative numbers are not allowed", 32);
+		exit(0);
+	}
+	return (num);
+}
 
 t_terms	*init_terms(int argc, char **argv)
 {
@@ -24,12 +44,12 @@ t_terms	*init_terms(int argc, char **argv)
 	philo = malloc(sizeof(t_terms));
 	if (!philo)
 		exit(0);
-	philo->num_of_philo = ft_atoi(argv[1]);
-	philo->time_to_die = ft_atoi(argv[2]);
-	philo->time_to_eat = ft_atoi(argv[3]);
-	philo->time_to_sleep = ft_atoi(argv[4]);
+	philo->num_of_philo = check_atoi(argv[1]);
+	philo->time_to_die = check_atoi(argv[2]);
+	philo->time_to_eat = check_atoi(argv[3]);
+	philo->time_to_sleep = check_atoi(argv[4]);
 	if (argc == 6)
-		philo->num_of_eats = ft_atoi(argv[5]);
+		philo->num_of_eats = check_atoi(argv[5]);
 	else
 		philo->num_of_eats = DISABLED;
 	if (philo->num_of_philo < 2 || philo->time_to_die <= 0
@@ -40,6 +60,7 @@ t_terms	*init_terms(int argc, char **argv)
 
 void	init_mutex(t_philo *philo)
 {
+	philo->state = ALIVE;
 	philo->fork = malloc (sizeof(pthread_mutex_t));
 	pthread_mutex_init(philo->fork, NULL);
 }

@@ -4,8 +4,5 @@ ACTUAL STATE OF THE PROJECT:
 
 
 
---added colors to the prints of the state of the philos to identify each thing in a better way
-
-
-
---to do: add the num_of_eats feature, work on the leaks and norminette 
+--to do: philo num of eats(check the OUT variable ont the philo_handler.c)
+         the free of the memmory at the end of the program

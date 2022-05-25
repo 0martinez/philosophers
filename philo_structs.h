@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:03:54 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/23 13:55:00 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/25 19:20:24 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@
 # define YELLOW	"\033[1;33m"
 # define PURPLE	"\033[1m\033[35m"
 
-# define ALIVE -1
+# define ALIVE -10
+# define OUT -1
 # define EATING 0
 # define SLEEPING 1
 # define THINKING 2

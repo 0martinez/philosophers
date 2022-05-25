@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:00:41 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/24 17:18:56 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/25 20:05:52 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ void	*platon(void *arg);
 
 int		philo_eat(t_philo *philo);
 int		philo_sleep(t_philo *philo);
+void	philo_dead(t_philo *philo);
 void	print_philo_state(t_philo *philo, int state);
+
+void	leaks(void);
 
 #endif
