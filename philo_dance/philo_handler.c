@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:28:18 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/25 20:10:07 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/28 19:19:16 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,5 @@ void	philo_handler(t_philo *philo, t_terms *philo_terms)
 		philo = philo->r_philo;
 		i++;
 	}
-	//join_philo_thread(philo, philo_terms);
 	check_philo_state(philo, philo_terms);
 }
