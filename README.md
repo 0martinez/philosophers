@@ -4,8 +4,4 @@ ACTUAL STATE OF THE PROJECT:
 
 
 
---leaks solved
-
-
-
---to do: philo n_eats
+--leaks solved and n_eats done, waiting for a code check of "el mejor"

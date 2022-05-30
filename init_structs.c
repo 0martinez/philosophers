@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:05:53 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/28 19:12:42 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:59:25 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ t_terms	*init_terms(int argc, char **argv)
 		philo_terms->num_of_eats = check_atoi(argv[5]);
 	else
 		philo_terms->num_of_eats = DISABLED;
-	if (philo_terms->num_of_philo < 2 || philo_terms->time_to_die <= 0
+	if (philo_terms->num_of_philo < 1 || philo_terms->time_to_die <= 0
 		|| philo_terms->time_to_eat <= 0 || philo_terms->time_to_sleep <= 0)
 		exit (0);
 	return (philo_terms);

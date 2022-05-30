@@ -6,7 +6,7 @@
 #    By: omartine <omartine@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 19:56:54 by omartine          #+#    #+#              #
-#    Updated: 2022/05/28 18:06:06 by omartine         ###   ########.fr        #
+#    Updated: 2022/05/30 19:44:34 by omartine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@ CFLAGS			= -Wall -Wextra -Werror -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=address"
 MAKE			= make
 
 
-SRCS = main.c init_structs.c utils/utils.c \
-		philo_dance/messages.c philo_dance/philo_handler.c \
+SRCS = main.c init_structs.c utils.c \
+		philo_dance/print_state.c philo_dance/philo_handler.c \
 		philo_dance/philo_moves.c philo_dance/socrates_platon.c \
-		utils/born_to_be_free.c
+		philo_dance/state_handling.c
 
 OBJS = $(SRCS:.c=.o)
 

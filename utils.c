@@ -6,11 +6,16 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:23:14 by omartine          #+#    #+#             */
-/*   Updated: 2022/05/25 18:45:14 by omartine         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:44:10 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../philo.h"
+#include "philo.h"
+
+void	leaks(void)
+{
+	system("leaks -q philo");
+}
 
 int	ft_atoi(const char *str)
 {
